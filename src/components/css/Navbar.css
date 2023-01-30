@@ -1,6 +1,6 @@
-
-.navbar {
-    display: flex;
+.color {
     background-color: #8C6140;
-    border: 2px greenyellow;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
+
