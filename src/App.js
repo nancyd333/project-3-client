@@ -87,19 +87,19 @@ function App() {
 
           <Route 
             path="/newItem"
-            element={<NewItem handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<NewItem currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
             path="/items"
-            element={<Items handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<Items currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
             path="/itemDetails"
-            element={<ItemDetails handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<ItemDetails currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
             path="/editItem"
-            element={<EditItem handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<EditItem currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
 
         </Routes>
