@@ -10,16 +10,16 @@ export default function Navbar({ currentUser, handleLogout }) {
 				<div className="navbar-item">
 
 					<div className="buttons">
-						<a className="button is-primary" href='/newItem'>
+						<a className="button is-light" href='/newItem'>
 							<strong>Share Item</strong>
 						</a>
 
-						<a className="button is-primary" href='/profile'>
+						<a className="button is-light" href='/profile'>
 							<strong>Profile</strong>
 						</a>
 
 						<a className="button is-light" href='/' onClick={handleLogout}>
-							Logout
+							<strong>Logout</strong>
 						</a>
 					</div>
 
@@ -35,7 +35,7 @@ export default function Navbar({ currentUser, handleLogout }) {
 				<div className="navbar-end">
 				<div className="navbar-item">
 					<div className="buttons">
-					<a className="button is-primary" href='/register'>
+					<a className="button is-light" href='/register'>
 						<strong>Sign up</strong>
 					</a>
 					<a className="button is-light" href='/login'>
@@ -55,11 +55,11 @@ export default function Navbar({ currentUser, handleLogout }) {
 				<div id="navbarBasicExample" className="navbar-menu">
 					<div className="navbar-start">
 					<a className="navbar-item" href='/'>
-						MERN Mavericks
+						<strong>MERN Mavericks</strong>
 					</a>
 
 					<a className="navbar-item" href='/items'>
-						Items
+						<strong>Items</strong>
 					</a>
 					</div>
 
