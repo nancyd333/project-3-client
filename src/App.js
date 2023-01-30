@@ -87,19 +87,19 @@ function App() {
 
           <Route 
             path="/newItem"
-            element={<NewItem currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<NewItem currentUser={currentUser} />}
           />
           <Route 
             path="/items"
-            element={<Items currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<Items currentUser={currentUser} />}
           />
           <Route 
             path="/itemDetails"
-            element={<ItemDetails currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<ItemDetails currentUser={currentUser} />}
           />
           <Route 
             path="/editItem"
-            element={<EditItem currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<EditItem currentUser={currentUser} />}
           />
 
         </Routes>

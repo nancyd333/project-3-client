@@ -4,13 +4,15 @@ export default function Navbar({ currentUser, handleLogout }) {
 	 const loggedIn = (
 		<>
 			{/* if the user is logged in... */}
+			<Link to="/profile">
+				profile
+			</Link>
+			
 			<Link to="/">
 				<span onClick={handleLogout}>logout</span>
 			</Link>
 
-			<Link to="/profile">
-				profile
-			</Link>
+			
 		</>
 	 )
 
