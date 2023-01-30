@@ -78,6 +78,26 @@ function App() {
             path="/profile"
             element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
+
+          {/* copy pasta with new pages */}
+
+          <Route 
+            path="/newItem"
+            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          />
+          <Route 
+            path="/newItem"
+            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          />
+          <Route 
+            path="/newItem"
+            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          />
+          <Route 
+            path="/newItem"
+            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          />
+
         </Routes>
       </div>
     </Router>
