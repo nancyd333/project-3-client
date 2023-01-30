@@ -32,6 +32,18 @@ export default function Items() {
 					<h1 className='text'>{item.name}</h1>
 					<h1 className='text'>{item.price}</h1>
 					<h1 className='text'>{item.url}</h1>
+					{/* <iframe src={item.url} frameborder="0"></iframe> */}
+					<iframe 
+						width="560" 
+						height="315" 
+						src={item.url}
+						title="YouTube video player" 
+						frameborder="0" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						allowfullscreen
+					>
+
+					</iframe>
 
 					<button>Details</button>
 				</div>
