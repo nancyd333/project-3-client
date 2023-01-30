@@ -10,6 +10,10 @@ import Profile from './components/pages/Profile'
 import Register from './components/pages/Register'
 import Welcome from './components/pages/Welcome'
 import Navbar from './components/Navbar'
+import EditItem from './components/pages/EditItem'
+import ItemDetails from './components/pages/ItemDetails'
+import Items from './components/pages/Items'
+import NewItem from './components/pages/NewItem'
 import './App.css'
 import jwt_decode from 'jwt-decode'
 
@@ -83,19 +87,19 @@ function App() {
 
           <Route 
             path="/newItem"
-            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            element={<NewItem handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
-            path="/newItem"
-            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            path="/items"
+            element={<Items handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
-            path="/newItem"
-            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            path="/itemDetails"
+            element={<ItemDetails handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
           <Route 
-            path="/newItem"
-            element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+            path="/editItem"
+            element={<EditItem handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
           />
 
         </Routes>
