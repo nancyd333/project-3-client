@@ -18,7 +18,7 @@ export default function Navbar({ currentUser, handleLogout }) {
 							<strong>Profile</strong>
 						</a>
 
-						<a className="button is-light" href='/'>
+						<a className="button is-light" href='/' onClick={handleLogout}>
 							Logout
 						</a>
 					</div>
