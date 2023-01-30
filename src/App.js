@@ -10,6 +10,10 @@ import Profile from './components/pages/Profile'
 import Register from './components/pages/Register'
 import Welcome from './components/pages/Welcome'
 import Navbar from './components/Navbar'
+import EditItem from './components/pages/EditItem'
+import ItemDetails from './components/pages/ItemDetails'
+import Items from './components/pages/Items'
+import NewItem from './components/pages/NewItem'
 import './App.css'
 import jwt_decode from 'jwt-decode'
 
@@ -77,6 +81,25 @@ function App() {
           <Route 
             path="/profile"
             element={<Profile handleLogout={handleLogout} currentUser={currentUser} setCurrentUser={setCurrentUser} />}
+          />
+
+          {/* copy pasta with new pages */}
+
+          <Route 
+            path="/newItem"
+            element={<NewItem currentUser={currentUser} />}
+          />
+          <Route 
+            path="/items"
+            element={<Items currentUser={currentUser} />}
+          />
+          <Route 
+            path="/itemDetails"
+            element={<ItemDetails currentUser={currentUser} />}
+          />
+          <Route 
+            path="/editItem"
+            element={<EditItem currentUser={currentUser} />}
           />
 
         </Routes>
