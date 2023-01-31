@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../css/Item.css'
-import EditItem from './EditItem'
+
 import { Link } from 'react-router-dom'
 
 // page will essentially show info of all items
@@ -68,7 +68,7 @@ export default function Items({items, setItems}) {
 
 	return (
 		<div >
-			<EditItem itemDetails={currentItemDetail} />
+		
 			{itemComponents}
 		</div>
 	)
