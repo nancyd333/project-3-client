@@ -29,21 +29,21 @@ export default function Items() {
 		return (
 			<div key={`${item._id}`} className='eachBox shadow' >
 				<div className='card-background ' >
-					<h1 className='text'>{item.name}</h1>
-					<h1 className='text'>{item.price}</h1>
-					<h1 className='text'>{item.url}</h1>
+					<h1 className='text'>name: {item.name}</h1>
+					<h1 className='text'>price: {item.price}</h1>
+					<h1 className='text'>category: {item.category}</h1>
+					{/* <h1 className='text'>{item.}</h1> */}
 					{/* <iframe src={item.url} frameborder="0"></iframe> */}
-					<iframe 
-						width="560" 
-						height="315" 
+					{/* <iframe 
+						width="360" 
+						height="215" 
 						src={item.url}
 						title="YouTube video player" 
 						frameborder="0" 
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+						// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 						allowfullscreen
-					>
-
-					</iframe>
+					> */}
+					{/* </iframe> */}
 
 					<button>Details</button>
 				</div>
