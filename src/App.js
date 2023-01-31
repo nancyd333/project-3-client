@@ -13,6 +13,7 @@ import EditItem from './components/pages/EditItem'
 import ItemDetails from './components/pages/ItemDetails'
 import Items from './components/pages/Items'
 import NewItem from './components/pages/NewItem'
+import Footer from './components/Footer'
 // import './App.css'
 import jwt_decode from 'jwt-decode'
 
@@ -92,7 +93,7 @@ function App() {
           />
           <Route 
             path="/items"
-            element={<Items currentUser={currentUser} items={items} setItems={setItems}/>}
+            element={<Items currentUser={currentUser} items={items} setItems={setItems} />}
           />
           {/* <Route 
             path="/itemDetails/:id"
@@ -102,9 +103,13 @@ function App() {
             path="/editItem/:id"
             element={<EditItem currentUser={currentUser} items={items} setItems={setItems}/>}
           />
-
         </Routes>
+
       </div>
+
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 }
