@@ -92,7 +92,7 @@ function App() {
           />
           <Route 
             path="/items"
-            element={<Items currentUser={currentUser} items={items} setItems={setItems}/>}
+            element={<Items currentUser={currentUser} items={items} setItems={setItems} />}
           />
           {/* <Route 
             path="/itemDetails/:id"
