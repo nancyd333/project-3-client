@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'  
+import { Link } from 'react-router-dom'
+import '../css/NewItem.css'
+import 'bulma/css/bulma.min.css'
 
 export default function NewItem(currentUser) {
 
@@ -42,19 +45,26 @@ export default function NewItem(currentUser) {
     }
 
     return(
-        <div>
+        <div class="columns is-centered">
+        <div class = "column is-5">
+                <div class = "box">
+                    <h2 class ="title">Create a new review</h2>
             <form onSubmit = {handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name:</label>
+                <div class="field">
+                    <label class="label" htmlFor="name">Name</label>
                     <input 
+                        class="input is-medium" 
                         type = 'text'
                         id='name'
                         placeholder='name ...'
                         value={form.name}
                         onChange={e => setForm({...form, name: e.target.value})}
                     />
-                    <label htmlFor="price">Price:</label>
+                </div>
+                <div class="field">
+                    <label class="label" htmlFor="price">Price</label>
                     <input 
+                        class="input is-medium" 
                         type = 'text'
                         id='price'
                         placeholder='price ...'
@@ -62,17 +72,23 @@ export default function NewItem(currentUser) {
                         onChange={e => setForm({...form, price: e.target.value})}
                     />
                 </div>
-                <div>
-                    <label htmlFor="category">Category:</label>
+                <div class="field">
+                    <div class="control">
+                    <label class="label" htmlFor="category">Category</label>
                     <input 
+                        class="input is-medium " 
                         type = 'text'
                         id='category'
                         placeholder='category ...'
                         value={form.category}
                         onChange={e => setForm({...form, category: e.target.value})}
                     />
-                    <label htmlFor="url">URL:</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" htmlFor="url">YouTube URL</label>
                     <input 
+                        class="input is-medium" 
                         type = 'text'
                         id='url'
                         placeholder='url ...'
@@ -80,10 +96,15 @@ export default function NewItem(currentUser) {
                         onChange={e => setForm({...form, url: e.target.value})}
                     />
                 </div>
-               
-                <button type='submit'>Submit</button>
+                
+                <button class="button is-medium is-dark"  type='submit'>Submit</button>
+              
             </form>
-        </div>
+            </div>
+            </div>
+            </div>
+
+
     )
 }
 
