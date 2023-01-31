@@ -1,12 +1,11 @@
-import { useParams } from "react-router-dom"
+import React from 'react'
 
-export default function ItemDetails() {
-
-	let { id } = useParams()
-
-	return (
-		<div>
-			{id}
-		</div>
-	)
+const ItemDetails = () => {
+  return (
+	<div>
+	  Del
+	</div>
+  )
 }
+
+export default ItemDetails
