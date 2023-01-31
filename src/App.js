@@ -14,6 +14,7 @@ import EditItem from './components/pages/EditItem'
 import ItemDetails from './components/pages/ItemDetails'
 import Items from './components/pages/Items'
 import NewItem from './components/pages/NewItem'
+import Footer from './components/Footer'
 // import './App.css'
 import jwt_decode from 'jwt-decode'
 
@@ -101,9 +102,13 @@ function App() {
             path="/editItem"
             element={<EditItem currentUser={currentUser} />}
           />
-
         </Routes>
+
       </div>
+
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 }
