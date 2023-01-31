@@ -20,6 +20,22 @@ const EditItem = () => {
     });
   };
 
+// console.log(id)
+  const handleDeleteClick = async () => {
+    try {
+        // request the server delete the current bounty
+        await axios.delete(`${process.env.REACT_APP_SERVER_URL}/item/${id}`)
+        // if the update succces, get /editItem to update state in parent
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/item`);
+        // // update the page
+        // props.setBounties(response.data)
+        // redirect 
+        navigate('/items')
+    } catch(err) {
+        console.warn(err)
+    }
+}
+
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name) {
@@ -108,6 +124,7 @@ const navigate = useNavigate()
         {errors.price && <p>{errors.price}</p>}
       </div>
       <button type="submit">Update</button>
+      <button onClick={handleDeleteClick}>Delete</button>
     </form>
   );
   
