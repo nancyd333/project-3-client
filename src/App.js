@@ -95,13 +95,13 @@ function App() {
             path="/items"
             element={<Items currentUser={currentUser} items={items} setItems={setItems}/>}
           />
-          <Route 
+          {/* <Route 
             path="/itemDetails/:id"
             element={<ItemDetails currentUser={currentUser} items={items} setItems={setItems}/>}
-          />
+          /> */}
           <Route 
-            path="/editItem"
-            element={<EditItem currentUser={currentUser} />}
+            path="/editItem/:id"
+            element={<EditItem currentUser={currentUser} items={items} setItems={setItems}/>}
           />
 
         </Routes>
