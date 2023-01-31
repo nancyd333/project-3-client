@@ -20,6 +20,8 @@ import jwt_decode from 'jwt-decode'
 function App() {
   // the currently logged in user will be stored up here in state
   const [currentUser, setCurrentUser] = useState(null)
+// store details of items and list all items
+  const [items, setItems] = useState([])
 
   // useEffect -- if the user navigates away form the page, we will log them back in
   useEffect(() => {
@@ -91,11 +93,11 @@ function App() {
           />
           <Route 
             path="/items"
-            element={<Items currentUser={currentUser} />}
+            element={<Items currentUser={currentUser} items={items} setItems={setItems}/>}
           />
           <Route 
-            path="/itemDetails"
-            element={<ItemDetails currentUser={currentUser} />}
+            path="/itemDetails/:id"
+            element={<ItemDetails currentUser={currentUser} items={items} setItems={setItems}/>}
           />
           <Route 
             path="/editItem"
