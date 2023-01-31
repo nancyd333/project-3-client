@@ -45,10 +45,13 @@ export default function NewItem(currentUser) {
     }
 
     return(
-        <div>
+        <div class="columns is-centered">
+        <div class = "column is-5">
+                <div class = "box">
+                    <h2 class ="title">Create a new review</h2>
             <form onSubmit = {handleSubmit}>
                 <div class="field">
-                    <label class="label" htmlFor="name">Name:</label>
+                    <label class="label" htmlFor="name">Name</label>
                     <input 
                         class="input is-medium" 
                         type = 'text'
@@ -59,7 +62,7 @@ export default function NewItem(currentUser) {
                     />
                 </div>
                 <div class="field">
-                    <label class="label" htmlFor="price">Price:</label>
+                    <label class="label" htmlFor="price">Price</label>
                     <input 
                         class="input is-medium" 
                         type = 'text'
@@ -71,7 +74,7 @@ export default function NewItem(currentUser) {
                 </div>
                 <div class="field">
                     <div class="control">
-                    <label class="label" htmlFor="category">Category:</label>
+                    <label class="label" htmlFor="category">Category</label>
                     <input 
                         class="input is-medium " 
                         type = 'text'
@@ -83,7 +86,7 @@ export default function NewItem(currentUser) {
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label" htmlFor="url">URL:</label>
+                    <label class="label" htmlFor="url">YouTube URL</label>
                     <input 
                         class="input is-medium" 
                         type = 'text'
@@ -93,10 +96,15 @@ export default function NewItem(currentUser) {
                         onChange={e => setForm({...form, url: e.target.value})}
                     />
                 </div>
-               
+                
                 <button class="button is-medium is-dark"  type='submit'>Submit</button>
+              
             </form>
-        </div>
+            </div>
+            </div>
+            </div>
+
+
     )
 }
 
