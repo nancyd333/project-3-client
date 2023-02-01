@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
 import '../css/NewItem.css'
 import 'bulma/css/bulma.min.css'
+import { Link } from 'react-router-dom'
 
 export default function Login({ currentUser, setCurrentUser }) {
 	// state for the controlled form
@@ -76,7 +77,12 @@ export default function Login({ currentUser, setCurrentUser }) {
 					value={password}
 				/>
 			</div>
-				<button class="button is-medium is-dark" type="submit">Login</button>
+				<button class="button is-medium is-dark m-1" type="submit">Login</button>
+				<Link to={'/items'}>
+     				 <button class="button is-medium is-dark m-1">
+        				Cancel
+     				 </button>
+      			</Link>
 			</form>
 		</div>
 		</div>

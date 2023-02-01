@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import '../css/NewItem.css'
 import 'bulma/css/bulma.min.css'
 
+
 export default function NewItem(currentUser) {
     	const[form, setForm] = useState({
         //initialize all of the values as empty strings
@@ -90,11 +91,13 @@ export default function NewItem(currentUser) {
                 </div>
                 <div class="field">
                     <label class="label" htmlFor="url">YouTube URL</label>
+                    <p>Only enter youtube vidoes with the format of <strong>https://www.youtube.com/watch?v=</strong>foYyeGLf9yU</p>
+                    <p>Please note: the 'foYyeGLf9yU' string in the above example will be the unique code youtube has created for your video and therefore will be different from the example. </p>
                     <input 
                         class="input is-medium" 
                         type = 'text'
                         id='url'
-                        placeholder='youtube embed url https://www.youtube.com/embed/'
+                        placeholder='enter youtube url'
                         value={form.url}
                         onChange={e => setForm({...form, url: e.target.value})}
                         required
@@ -103,7 +106,12 @@ export default function NewItem(currentUser) {
                 </div>
                 
                 
-                <button class="button is-medium is-dark"  type='submit'>Submit</button>
+                <button class="button is-medium is-dark m-1"  type='submit'>Submit</button>
+                <Link to={'/items'}>
+     				 <button class="button is-medium is-dark m-1">
+        				Cancel
+     				 </button>
+      			</Link>
               
             </form>
             </div>
