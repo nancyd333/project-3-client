@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../css/Item.css'
 // import EditItem from './EditItem'
+import '../css/NewItem.css'
+import 'bulma/css/bulma.min.css'
 
 import { Link } from 'react-router-dom'
 
@@ -36,11 +38,13 @@ export default function Items({ items, setItems, currentUser }) {
 		if (!currentUser) {
 			// if not logged in at all, still able to see all items
 			return (
-				<div key={`${item._id}`} className='eachBox' >
-					<div className='card-background ' >
-						<h1 className='text'>name: {item.name}</h1>
-						<h1 className='text'>price: {item.price}</h1>
-						<h1 className='text'>category: {item.category}</h1>
+				<div class="columns is-centered">
+				<div class = "column is-5">
+						<div class = "box">
+				<div key={`${item._id}`}>
+						<h1 class="title">{item.name}</h1>
+						<h2 class='subtitle'>price: {item.price}</h2>
+						<h2 class='subtitle'>category: {item.category}</h2>
 						{/* <h1 className='text'>{item.}</h1> */}
 						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
 						<iframe
@@ -53,18 +57,20 @@ export default function Items({ items, setItems, currentUser }) {
 							allowfullscreen
 						>
 						</iframe>
-
-
+						</div>
+						</div>
 					</div>
 				</div>
 			)
 		} else if (currentUser.id === item.userId) {
 			return (
-				<div key={`${item._id}`} className='eachBox' >
-					<div className='card-background ' >
-						<h1 className='text'>name: {item.name}</h1>
-						<h1 className='text'>price: {item.price}</h1>
-						<h1 className='text'>category: {item.category}</h1>
+				<div class="columns is-centered">
+				<div class = "column is-5">
+						<div class = "box">
+				<div key={`${item._id}`}  >
+						<h1 class='title'>{item.name}</h1>
+						<h2 class='subtitle'>price: {item.price}</h2>
+						<h2 class='subtitle'>category: {item.category}</h2>
 						{/* <h1 className='text'>{item.}</h1> */}
 						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
 						<iframe
@@ -79,13 +85,16 @@ export default function Items({ items, setItems, currentUser }) {
 						</iframe>
 
 						<Link to={`/editItem/${item._id}`} >
-							<button >
+							<button class="button is-small is-dark" >
 
 								Edit
 							</button>
 						</Link>
 
 					</div>
+					</div>
+					</div>
+
 				</div>
 			)
 
@@ -93,11 +102,13 @@ export default function Items({ items, setItems, currentUser }) {
 
 
 			return (
-				<div key={`${item._id}`} className='eachBox' >
-					<div className='card-background ' >
-						<h1 className='text'>name: {item.name}</h1>
-						<h1 className='text'>price: {item.price}</h1>
-						<h1 className='text'>category: {item.category}</h1>
+				<div class="columns is-centered">
+				<div class = "column is-5">
+						<div class = "box">
+				<div key={`${item._id}`}  >
+						<h1 class='title'>{item.name}</h1>
+						<h1 class='subtitle'>price: {item.price}</h1>
+						<h1 class='subtitle'>category: {item.category}</h1>
 						{/* <h1 className='text'>{item.}</h1> */}
 						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
 						<iframe
@@ -111,6 +122,8 @@ export default function Items({ items, setItems, currentUser }) {
 						>
 						</iframe>
 
+					</div>
+					</div>
 					</div>
 				</div>
 			)
