@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import Items from './Items';
 import '../css/NewItem.css'
 import 'bulma/css/bulma.min.css'
+import { Link } from 'react-router-dom'
 
 
 const EditItem = (props) => {
@@ -148,6 +149,11 @@ const navigate = useNavigate()
 
       <button class="button is-medium is-dark m-1" type="submit">Update</button>
       <button class="button is-medium is-dark m-1" onClick={handleDeleteClick}>Delete</button>
+      <Link to={'/items'}>
+     				 <button class="button is-medium is-dark m-1">
+        				Cancel
+     				 </button>
+      </Link>
     </form>
     </div>
     </div>
