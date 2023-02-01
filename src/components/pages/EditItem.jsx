@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom"
 import Items from './Items';
+import '../css/NewItem.css'
+import 'bulma/css/bulma.min.css'
 
 
 const EditItem = (props) => {
@@ -90,51 +92,66 @@ const navigate = useNavigate()
   };
 
   return (
+    <div class="columns is-centered">
+    <div class = "column is-5">
+            <div class = "box">
+                <h2 class ="title">Edit review</h2>
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
+      <div class="field">
+        <label class="label" htmlFor="name">Product name</label>
         <input
+          class="input is-medium"
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
-          // placeholder='none'
+          required
         />
         {errors.name && <p>{errors.name}</p>}
       </div>
-      <div>
-        <label htmlFor="category">Category:</label>
+      <div class="field">
+        <label class="label" htmlFor="price">Price</label>
         <input
-          type="text"
-          name="category"
-          value={formData.category}
-          onChange={handleChange}
-        />
-        {errors.category && <p>{errors.category}</p>}
-      </div>
-      <div>
-        <label htmlFor="url">URL:</label>
-        <input
-          type="text"
-          name="url"
-          value={formData.url}
-          onChange={handleChange}
-        />
-        {errors.url && <p>{errors.url}</p>}
-      </div>
-      <div>
-        <label htmlFor="price">Price:</label>
-        <input
+          class="input is-medium"
           type="number"
           name="price"
           value={formData.price}
           onChange={handleChange}
+          required
         />
         {errors.price && <p>{errors.price}</p>}
       </div>
-      <button type="submit">Update</button>
-      <button onClick={handleDeleteClick}>Delete</button>
+      <div class="field">
+        <label class="label" htmlFor="category">Category</label>
+        <input
+          class="input is-medium"
+          type="text"
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          required
+        />
+        {errors.category && <p>{errors.category}</p>}
+      </div>
+      <div class="field">
+        <label class="label" htmlFor="url">YouTube URL:</label>
+        <input
+          class="input is-medium"
+          type="text"
+          name="url"
+          value={formData.url}
+          onChange={handleChange}
+          required
+        />
+        {errors.url && <p>{errors.url}</p>}
+      </div>
+
+      <button class="button is-medium is-dark m-1" type="submit">Update</button>
+      <button class="button is-medium is-dark m-1" onClick={handleDeleteClick}>Delete</button>
     </form>
+    </div>
+    </div>
+    </div>
   );
   
 };
