@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from "react-router-dom"
+import Items from './Items';
 
 
-const EditItem = () => {
-    let { id } = useParams()
+const EditItem = (props) => {
+
+  let { id } = useParams()
+
+  // console.log('this is props', props.items)
+
+  const currentItemDetail = props.items.find(item => item._id === id )
+  // console.log('this is ----', currentItemDetail)
+
   const [formData, setFormData] = useState({
-    name: '',
-    category: '',
-    url: '',
-    price: ''
+    name: currentItemDetail.name,
+    category: currentItemDetail.category,
+    url: currentItemDetail.url,
+    price: currentItemDetail.price
   });
   const [errors, setErrors] = useState({});
 
@@ -90,6 +98,7 @@ const navigate = useNavigate()
           name="name"
           value={formData.name}
           onChange={handleChange}
+          // placeholder='none'
         />
         {errors.name && <p>{errors.name}</p>}
       </div>
