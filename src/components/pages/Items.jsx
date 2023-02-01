@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import '../css/Item.css'
+// import EditItem from './EditItem'
 
 import { Link } from 'react-router-dom'
 
@@ -31,7 +32,6 @@ export default function Items({ items, setItems, currentUser }) {
 	}, [])
 
 	const itemComponents = items.map(item => {
-
 
 		if (!currentUser) {
 			// if not logged in at all, still able to see all items
@@ -79,7 +79,7 @@ export default function Items({ items, setItems, currentUser }) {
 						</iframe>
 
 						<Link to={`/editItem/${item._id}`} >
-							<button>
+							<button >
 
 								Edit
 							</button>
@@ -125,12 +125,12 @@ export default function Items({ items, setItems, currentUser }) {
 
 	// sends clicked details over to edit page
 	const currentItemDetail = items.find(item => item._id === itemDetails)
-	console.log(currentItemDetail)
+	console.log('this is current item detail',currentItemDetail)
 
 	return (
 		<div >
-
 			{itemComponents}
+			{/* <EditItem  /> */}
 		</div>
 	)
 
