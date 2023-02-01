@@ -38,112 +38,116 @@ export default function Items({ items, setItems, currentUser }) {
 		if (!currentUser) {
 			// if not logged in at all, still able to see all items
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}>
-						<h1 class="title">{item.name}</h1>
-						<h2 class='subtitle'>price: {item.price}</h2>
-						<h2 class='subtitle'>category: {item.category}</h2>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
+				// <div class="column is-centered">
+					
+						<div class="column is-3 box" style={{margin: "10px"}}>	
+							<div key={`${item._id}`}>
+								<h1 class="title">{item.name}</h1>
+								<h2 class='subtitle'>price: {item.price}</h2>
+								<h2 class='subtitle'>category: {item.category}</h2>
+								{/* <h1 className='text'>{item.}</h1> */}
+								{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
+								<iframe
+									width="360"
+									height="215"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
+							</div>
 						</div>
-						</div>
-					</div>
-				</div>
+					
+				// </div>
 			)
 		} else if (currentUser.id === item.userId) {
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}  >
-						<h1 class='title'>{item.name}</h1>
-						<h2 class='subtitle'>price: {item.price}</h2>
-						<h2 class='subtitle'>category: {item.category}</h2>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
+				// <div class="column is-centered">
+					
+						<div class="column is-3 box" style={{margin: "10px"}}>
+							<div key={`${item._id}`}  >
+								<h1 class='title'>{item.name}</h1>
+								<h2 class='subtitle'>price: {item.price}</h2>
+								<h2 class='subtitle'>category: {item.category}</h2>
+								{/* <h1 className='text'>{item.}</h1> */}
+								{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
+								<iframe
+									width="360"
+									height="215"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
 
-						<Link to={`/editItem/${item._id}`} >
-							<button class="button is-small is-dark" >
+								<div>
+									<Link to={`/editItem/${item._id}`} >
+										<button class="button is-small is-dark" >
 
-								Edit
-							</button>
-						</Link>
+											Edit
+										</button>
+									</Link>
 
-					</div>
-					</div>
-					</div>
+								</div>
 
-				</div>
+
+							</div>
+						</div>
+					
+
+				// </div>
 			)
 
 		} else if (currentUser.id !== item.userId) {
 
 
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}  >
-						<h1 class='title'>{item.name}</h1>
-						<h1 class='subtitle'>price: {item.price}</h1>
-						<h1 class='subtitle'>category: {item.category}</h1>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
+				// <div class="column is-centered">
+					
+						<div class="column is-3 box" style={{margin: "10px"}}>
+							<div key={`${item._id}`}  >
+								<h1 class='title'>{item.name}</h1>
+								<h1 class='subtitle'>price: {item.price}</h1>
+								<h1 class='subtitle'>category: {item.category}</h1>
+								{/* <h1 className='text'>{item.}</h1> */}
+								{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
+								<iframe
+									width="360"
+									height="215"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
 
-					</div>
-					</div>
-					</div>
-				</div>
+							</div>
+						</div>
+					
+				// </div>
 			)
 
 		}
-
-
-
-
-
 	})
+
+
 
 	// sends clicked details over to edit page
 	const currentItemDetail = items.find(item => item._id === itemDetails)
-	console.log('this is current item detail',currentItemDetail)
+	console.log('this is current item detail', currentItemDetail)
 
 	return (
-		<div >
-			{itemComponents}
-			{/* <EditItem  /> */}
+		<div class="columns is-4 is-multiline " >
+				{itemComponents}
+			<div >
+
+			</div>
+			
 		</div>
 	)
 
