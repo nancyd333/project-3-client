@@ -6,8 +6,7 @@ import '../css/NewItem.css'
 import 'bulma/css/bulma.min.css'
 
 export default function NewItem(currentUser) {
-
-	const[form, setForm] = useState({
+    	const[form, setForm] = useState({
         //initialize all of the values as empty strings
         name: '',
 		price: '',
@@ -17,6 +16,7 @@ export default function NewItem(currentUser) {
    
     })
 	 // console.log(process.env.REACT_APP_SERVER_URL)
+
 
     //invoke the useNavigate hook to get a navigate function to use
     const navigate = useNavigate()
@@ -51,7 +51,7 @@ export default function NewItem(currentUser) {
                     <h2 class ="title">Create a new review</h2>
             <form onSubmit = {handleSubmit}>
                 <div class="field">
-                    <label class="label" htmlFor="name">Name</label>
+                    <label class="label" htmlFor="name">Product name</label>
                     <input 
                         class="input is-medium" 
                         type = 'text'
@@ -59,6 +59,7 @@ export default function NewItem(currentUser) {
                         placeholder='name ...'
                         value={form.name}
                         onChange={e => setForm({...form, name: e.target.value})}
+                        required
                     />
                 </div>
                 <div class="field">
@@ -70,6 +71,7 @@ export default function NewItem(currentUser) {
                         placeholder='price ...'
                         value={form.price}
                         onChange={e => setForm({...form, price: e.target.value})}
+                        required
                     />
                 </div>
                 <div class="field">
@@ -82,6 +84,7 @@ export default function NewItem(currentUser) {
                         placeholder='category ...'
                         value={form.category}
                         onChange={e => setForm({...form, category: e.target.value})}
+                        required
                     />
                     </div>
                 </div>
@@ -91,11 +94,14 @@ export default function NewItem(currentUser) {
                         class="input is-medium" 
                         type = 'text'
                         id='url'
-                        placeholder='url ...'
+                        placeholder='youtube embed url https://www.youtube.com/embed/'
                         value={form.url}
                         onChange={e => setForm({...form, url: e.target.value})}
+                        required
                     />
+
                 </div>
+                
                 
                 <button class="button is-medium is-dark"  type='submit'>Submit</button>
               

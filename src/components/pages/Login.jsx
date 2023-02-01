@@ -2,6 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
+import '../css/NewItem.css'
+import 'bulma/css/bulma.min.css'
 
 export default function Login({ currentUser, setCurrentUser }) {
 	// state for the controlled form
@@ -13,7 +15,7 @@ export default function Login({ currentUser, setCurrentUser }) {
 	const handleSubmit = async e => {
 		e.preventDefault()
 		try {
-			// post fortm data to the backend
+			// post form data to the backend
 			const reqBody = {
 				email, 
 				password
@@ -40,36 +42,44 @@ export default function Login({ currentUser, setCurrentUser }) {
 
 	// conditionally render a navigate component
 	if (currentUser) {
-		return <Navigate to="/profile" />
+		return <Navigate to="/items" />
 	}
 
 	return (
-		<div>
-			<h1>Login to Your Account:</h1>
+        <div class="columns is-centered">
+        <div class = "column is-5">
+                <div class = "box">
+			<h2 class="title">Login</h2>
 
 			<p>{msg}</p>
 
 			<form onSubmit={handleSubmit}>
-				<label htmlFor='email'>Email:</label>
+			<div class="field">
+				<label class="label" htmlFor='email'>Email:</label>
 				<input 
+					class="input is-medium"
 					type="email"
 					id="email"
 					placeholder='your email...'
 					onChange={e => setEmail(e.target.value)}
 					value={email}
 				/>
-
-				<label htmlFor='password'>Password:</label>
+			</div>
+			<div class="field">
+				<label class="label" htmlFor='password'>Password:</label>
 				<input 
+					class="input is-medium"
 					type="password"
 					id="password"
 					placeholder='password...'
 					onChange={e => setPassword(e.target.value)}
 					value={password}
 				/>
-
-				<button type="submit">Login</button>
+			</div>
+				<button class="button is-medium is-dark" type="submit">Login</button>
 			</form>
+		</div>
+		</div>
 		</div>
 	)
 }
