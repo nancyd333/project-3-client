@@ -1,23 +1,12 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import '../css/Item.css'
-// import EditItem from './EditItem'
 import '../css/NewItem.css'
 import 'bulma/css/bulma.min.css'
 
 import { Link } from 'react-router-dom'
 
 // page will essentially show info of all items
-// then if clicked on will send user to new page with item info
-// if user has authority of that item, means that they can edit or delete that item 
 export default function Items({ items, setItems, currentUser }) {
-
-	console.log('this is current user', currentUser)
-
-	// store details of items and list all items
-	// const [items, setItems] = useState([])
-	// ???? need something that shows us the id of whats been clicked, maybe???
-	const [itemDetails, setItemDetails] = useState('')
 
 	// will show all items
 	useEffect(() => {
@@ -38,112 +27,133 @@ export default function Items({ items, setItems, currentUser }) {
 		if (!currentUser) {
 			// if not logged in at all, still able to see all items
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}>
+
+				// creates 3x3 column of all items
+				<div class="column is-3 box m-4" >
+					<div key={`${item._id}`}>
 						<h1 class="title">{item.name}</h1>
-						<h2 class='subtitle'>price: {item.price}</h2>
-						<h2 class='subtitle'>category: {item.category}</h2>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
+
+						<div>
+							<figure class="image is-16by9">
+								<iframe
+									class="has-ratio"
+									width="312"
+									height="219"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
+							</figure>
+
 						</div>
+
+
+						<div>
+							<p>price: {item.price}</p>
+							<p>category: {item.category}</p>
 						</div>
+
 					</div>
 				</div>
+
+
 			)
 		} else if (currentUser.id === item.userId) {
+			// if user is logged in and has created an item, will see EDIT BUTTON
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}  >
+
+				// creates 3x3 column of all items
+				<div class="column is-3 box m-4" >
+					<div key={`${item._id}`}  >
 						<h1 class='title'>{item.name}</h1>
-						<h2 class='subtitle'>price: {item.price}</h2>
-						<h2 class='subtitle'>category: {item.category}</h2>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
 
-						<Link to={`/editItem/${item._id}`} >
-							<button class="button is-small is-dark" >
+						<div >
+							<figure class="image is-16by9">
+								<iframe
+									class="has-ratio"
+									width="312"
+									height="219"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
+							</figure>
 
-								Edit
-							</button>
-						</Link>
+						</div>
+
+						<div>
+							<p>price: {item.price}</p>
+							<p>category: {item.category}</p>
+						</div>
+
+						{/* edit button and redirects you */}
+						<div>
+							<Link to={`/editItem/${item._id}`} >
+								<button class="button is-small is-dark" >
+
+									Edit
+								</button>
+							</Link>
+						</div>
+
 
 					</div>
-					</div>
-					</div>
-
 				</div>
+
+
+
 			)
 
 		} else if (currentUser.id !== item.userId) {
 
 
 			return (
-				<div class="columns is-centered">
-				<div class = "column is-5">
-						<div class = "box">
-				<div key={`${item._id}`}  >
+				// if logged in and not created that item, DO NOT SEE EDIT BUTTON
+				<div class="column is-3 box m-4" >
+					<div key={`${item._id}`}  >
 						<h1 class='title'>{item.name}</h1>
-						<h1 class='subtitle'>price: {item.price}</h1>
-						<h1 class='subtitle'>category: {item.category}</h1>
-						{/* <h1 className='text'>{item.}</h1> */}
-						{/* <iframe src={item.url.slice(0,24) + 'embed/' + item.url.slice(32)} frameborder="0"></iframe> */}
-						<iframe
-							width="360"
-							height="215"
-							src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-						>
-						</iframe>
 
-					</div>
-					</div>
+						<div class=' is-2 '>
+							<figure class="image is-16by9">
+								<iframe
+									class="has-ratio"
+									width="312"
+									height="219"
+									src={item.url.slice(0, 24) + 'embed/' + item.url.slice(32)}
+									title="YouTube video player"
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowfullscreen
+								>
+								</iframe>
+							</figure>
+
+						</div>
+
+						<div>
+							<p>price: {item.price}</p>
+							<p>category: {item.category}</p>
+						</div>
 					</div>
 				</div>
+
+
 			)
 
 		}
-
-
-
-
-
 	})
 
-	// sends clicked details over to edit page
-	const currentItemDetail = items.find(item => item._id === itemDetails)
-	console.log('this is current item detail',currentItemDetail)
 
 	return (
-		<div >
+		<div class="columns is-5 is-multiline is-centered" >
 			{itemComponents}
-			{/* <EditItem  /> */}
+			
 		</div>
 	)
 
