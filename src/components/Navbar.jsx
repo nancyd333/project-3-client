@@ -13,9 +13,9 @@ export default function Navbar({ currentUser, handleLogout }) {
 							<strong>Share Item</strong>
 						</a>
 
-						<a className="button is-light" href='/profile'>
+						{/* <a className="button is-light" href='/profile'>
 							<strong>Profile</strong>
-						</a>
+						</a> */}
 
 						<a className="button is-light" href='/' onClick={handleLogout}>
 							<strong>Logout</strong>
