@@ -8,11 +8,7 @@ export default function Footer() {
         
 
 
-        <footer class="footer sticky-footer">
-         <div class="content has-text-centered">
-           <p>Copyright © 2023 Company Name</p>
-         </div>
-           </footer>
+
 
         </>
     )
