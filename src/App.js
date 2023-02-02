@@ -5,12 +5,10 @@ import {
 } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Login from './components/pages/Login'
-import Profile from './components/pages/Profile'
 import Register from './components/pages/Register'
 import Welcome from './components/pages/Welcome'
 import Navbar from './components/Navbar'
 import EditItem from './components/pages/EditItem'
-import ItemDetails from './components/pages/ItemDetails'
 import Items from './components/pages/Items'
 import NewItem from './components/pages/NewItem'
 import Footer from './components/Footer'
@@ -107,9 +105,9 @@ function App() {
 
       </div>
 
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </Router>
   );
 }

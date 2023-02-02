@@ -8,12 +8,7 @@ export default function Footer() {
         
 
 
-        <footer className="footer sticky-footer">
-        
-    
-       <p >Copyright © 2023 MERN Maveriks</p>
-      
-     </footer>
+
 
         </>
     )

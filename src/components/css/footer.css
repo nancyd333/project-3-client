@@ -2,17 +2,6 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
+}
 
-  .creator-info {
-    display: inline-flex;
-    margin: 1em 0;
-  }
-  .spacer{
-    height: 1em;
-
-  }
+  
