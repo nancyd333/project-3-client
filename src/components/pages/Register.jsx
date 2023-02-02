@@ -49,7 +49,8 @@ export default function Register({ currentUser, setCurrentUser }) {
 	}
 
 	return (
-        <div class="columns is-centered">
+		<div className='background-color'>
+			<div class="columns is-centered">
         <div class = "column is-5">
                 <div class = "box">
 			<h2 class="title">Register for an account</h2>
@@ -100,6 +101,10 @@ export default function Register({ currentUser, setCurrentUser }) {
 		</div>
 		</div>
 		</div>
+		
 
+
+		</div>
+        
 	)
 }

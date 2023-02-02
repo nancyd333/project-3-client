@@ -12,7 +12,7 @@ import EditItem from './components/pages/EditItem'
 import Items from './components/pages/Items'
 import NewItem from './components/pages/NewItem'
 import Footer from './components/Footer'
-// import './App.css'
+ import './App.css'
 import jwt_decode from 'jwt-decode'
 
 function App() {

@@ -2,16 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 body {
-    background-color:  white;
+    background-color: #353740;
     font-family:"Montserrat";
     font-size: 20px;
     font-weight: 700;
+    min-height: 100vh;
 }
+
 .columns{
     padding: 100px;
 }
 .box{
-  background-color: rgba(46,64,82,0.3)!important;  
+  background-color: #363636;  
   border-radius: 20px;
 }
 

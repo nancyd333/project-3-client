@@ -27,6 +27,8 @@ export default function Items({ items, setItems, currentUser }) {
 		if (!currentUser) {
 			// if not logged in at all, still able to see all items
 			return (
+			
+				
 
 				// creates 3x3 column of all items
 				<div class="column is-3 box m-4" >
@@ -115,6 +117,7 @@ export default function Items({ items, setItems, currentUser }) {
 
 			return (
 				// if logged in and not created that item, DO NOT SEE EDIT BUTTON
+				
 				<div class="column is-3 box m-4" >
 					<div key={`${item._id}`}  >
 						<h1 class='title'>{item.name}</h1>
